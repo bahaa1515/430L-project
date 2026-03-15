@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Exchange Rate System Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React frontend for the Exchange Rate System project. It provides a user interface for authentication, viewing exchange rate data, creating transactions, managing marketplace offers, and accessing user and admin features based on role.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- React
+- React Router
+- Axios
+- Material UI
+- Recharts
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before running the project, make sure you have:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js 16 or higher
+- npm or yarn
+- The backend server running and accessible
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd project-frontend
+2. Install dependencies:
+npm install
+Running the Application
+Start the development server:
+npm start
+Then open:
+http://localhost:3000/bahaa-hamdan
+All frontend routes use the fixed prefix:
+/bahaa-hamdan
+Backend Requirements
+This frontend depends on the backend API being available. The backend should support the endpoints used by the frontend, including authentication, exchange rate history, analytics, transactions, marketplace actions, preferences, notifications, alerts, watchlist, and admin operations.
+Make sure the API base URL in the frontend is configured correctly before running the app.
+Main Pages
+* Login / Register: User authentication
+* Dashboard: Main overview page with exchange rate insights and analytics
+* Transactions: Create and view personal exchange transactions
+* History: View historical exchange rate data with charts and filtering
+* Marketplace: Create, browse, accept, and cancel exchange offers
+* Alerts: Manage exchange rate alerts
+* Watchlist: Track selected items
+* Notifications: View system notifications
+* Preferences: Manage user settings
+* Admin: Admin-only area for system monitoring and management
+Main Features
+* Fixed slug-based routing using /bahaa-hamdan
+* JWT-based authentication
+* Protected routes for authenticated users
+* Role-based visibility for admin pages
+* Exchange rate history and analytics
+* Interactive charts for historical data
+* Transaction creation and listing
+* Marketplace offer management
+* Alerts, watchlist, notifications, and preferences support
+* Error handling for invalid requests and rate-limited responses
+Authentication
+JWT tokens are stored in localStorage and used for authenticated API requests. Protected pages require a valid login session.
+Routing
+The application uses a fixed slug route structure. Example routes include:
+* /bahaa-hamdan/login
+* /bahaa-hamdan/register
+* /bahaa-hamdan/dashboard
+* /bahaa-hamdan/transactions
+* /bahaa-hamdan/history
+* /bahaa-hamdan/marketplace
+* /bahaa-hamdan/alerts
+* /bahaa-hamdan/watchlist
+* /bahaa-hamdan/notifications
+* /bahaa-hamdan/preferences
+* /bahaa-hamdan/admin
+Project Structure
+src/
+  api/
+  components/
+  context/
+  pages/
+  routes/
+  utils/
+Build for Production
+npm run build
+This creates an optimized production build in the build folder.
+Testing
+npm test
+Runs the test runner in watch mode.
+Notes
+* All routes are prefixed with /bahaa-hamdan
+* Admin page access should only appear for users with the ADMIN role
+* The frontend expects the backend API to be running before use
+* Some features depend on backend permissions and available endpoints
+* JWT tokens are stored locally for session persistence
+Sprint 2 Scope
+This Sprint 2 frontend includes the main user-facing pages required for the exchange rate system, including authentication, dashboard analytics, history visualization, transactions, marketplace flow, alerts, watchlist, notifications, preferences, and role-based admin access, while preserving the existing routing structure and previously working functionality.
 
-### `npm run build`
+### Small edits you should do before submitting
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Replace `<repository-url>` with your real repo link if needed
+- Remove any feature name that is not fully working
+- Keep admin mention only if your admin page is actually implemented
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Your README warning in terminal is unrelated to README. It is just React hook dependency warnings, not a README problem.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
