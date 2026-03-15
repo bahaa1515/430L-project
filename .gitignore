@@ -30,4 +30,12 @@ Thumbs.db
 # editor folders
 .vscode/
 .idea/
+
+# python / backend
+venv/
+__pycache__/
+*.pyc
+migrations/**/__pycache__/
+
+# archives
 *.zip
